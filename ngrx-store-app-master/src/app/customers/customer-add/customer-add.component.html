@@ -1,0 +1,25 @@
+<h3>Ajouter une offre</h3>
+
+<form class="form-inline mb-4">
+  <form [formGroup]="customerForm" (submit)="createOffer()" class="form-inline mb-4">
+    <label class="sr-only" for="Name">Name</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="name" placeholder="nom de l'émployé">
+    </div>
+
+    <label class="sr-only" for="Phone">Phone</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="phone" placeholder="v-Depart">
+    </div>
+
+    <label class="sr-only" for="Address">Address</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="address" placeholder="v-Arrivee">
+    </div>
+
+    <label class="sr-only" for="membership">Membership</label>
+    <div class="input-group mb-2 mr-sm-2">
+        <input type="date" formControlName="membership" class="form-control" placeholder="Date">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">   Ajouter   </button>
+  </form>

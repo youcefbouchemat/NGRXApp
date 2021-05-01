@@ -1,0 +1,32 @@
+<h3>Les Offres</h3>
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Identifiant</th>
+      <th scope="col">propose Par</th>
+      <th scope="col">v-Depart</th>
+      <th scope="col">v-Arrivee</th>
+      <th scope="col">Date</th>
+      <th scope="col"></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    <tr>
+    <tr *ngFor="let customer of (customers$ |async)">
+      <th scope="row">{{customer.id}}</th>
+      <td>{{customer.nom}}</td>
+      <td>{{customer.v_depart}}</td>
+      <td>{{customer.v_arrivee}}</td>
+      <td>{{customer.date}}</td>
+      <th>
+        <a (click)=editCustomer(customer)>Modifier</a>
+        <br>
+        <a (click)=deleteCustomer(customer)>supprimer</a>
+      </th>
+    </tr>
+  </tbody>
+</table>
